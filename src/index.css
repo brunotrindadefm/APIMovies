@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  scrollbar-color: #b8930c #333; 
 }
 
 body {

@@ -39,7 +39,7 @@ const Movie = () => {
 
   return (
     <div className="movie-page">
-      {movie && <div className="card-movie">
+      {movie && <>
         <MovieCard movie={movie} showMovie={false} />
         <p className="tagline"></p>
         <div className="info">
@@ -72,7 +72,7 @@ const Movie = () => {
           </h3>
           <p>{movie.overview}</p>
         </div>
-      </div>}
+      </>}
     </div>
   )
 }
