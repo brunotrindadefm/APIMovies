@@ -30,6 +30,11 @@ const Movie = () => {
     });
   }
 
+  const formatDate = (date) => {
+    const [year, month, day] = date.split('-');
+    return `${day}/${month}/${year}`;
+  };
+  
   useEffect(() => {
 
     const movieURL = `${moviesURL}${id}?${apiKey}&language=pt-BR`
@@ -64,7 +69,7 @@ const Movie = () => {
           <h3>
             <BsHourglassSplit /> Data de lançamento:
           </h3>
-          <p>{movie.release_date}</p>
+          <p>{formatDate(movie.release_date)}</p>
         </div>
         <div className="info description">
           <h3>
