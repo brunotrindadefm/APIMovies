@@ -58,3 +58,19 @@
     background-color: transparent;
     color: #F7D354;
 }
+
+@media (max-width: 740px) {
+    .movies-container div {
+        width: 40%;
+    }
+
+    .movies-container {
+        justify-content: space-evenly;
+    }
+}
+
+@media (max-width: 510px) {
+    .movies-container div {
+        width: 80%;
+    }
+}
