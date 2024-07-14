@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import './MovieGrid.css'
 
 import MovieCard from '../components/MovieCard';
+import Loading from '../components/Loading';
 
 const moviesURL = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -11,15 +12,23 @@ const apiKey = import.meta.env.VITE_API_KEY;
 const Home = () => {
 
     const [topMovies, setTopMovies] = useState([])
+    const [loading, setLoading] = useState(false)
 
     const getTopRatedMovies = async (url) => {
 
+        setLoading(true)
 
-        const resp = await fetch(url);
-        const data = await resp.json();
+        try {
+            const resp = await fetch(url);
+            const data = await resp.json();
 
-        setTopMovies(data.results)
-        console.log(data.results)
+            setTopMovies(data.results)
+            console.log(data.results)
+        } catch (erro) {
+            erro.message
+        } finally {
+            setLoading(false)
+        }
     }
 
     useEffect(() => {
@@ -31,9 +40,16 @@ const Home = () => {
 
     return (
         <div className='container'>
-            <h2 className='title'>Filmes populares</h2>
+            {!loading &&
+                <h2 className='title'>Filmes populares</h2>
+            }
+            {loading &&
+                <div className="erro-loading">
+                    <Loading />
+                </div>
+            }
             <div className='movies-container'>
-            {topMovies.length === 0 && <p>Loading...</p>}
+                {topMovies.length === 0 && <Loading />}
                 {topMovies.length > 0 && topMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
             </div>
 
