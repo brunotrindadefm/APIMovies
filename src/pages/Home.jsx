@@ -43,11 +43,6 @@ const Home = () => {
             {!loading &&
                 <h2 className='title'>Filmes populares</h2>
             }
-            {loading &&
-                <div className="erro-loading">
-                    <Loading />
-                </div>
-            }
             <div className='movies-container'>
                 {topMovies.length === 0 && <Loading />}
                 {topMovies.length > 0 && topMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}

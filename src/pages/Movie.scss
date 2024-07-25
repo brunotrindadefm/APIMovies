@@ -1,0 +1,69 @@
+@import '../Variáveis.scss';
+
+.movie-page {
+    color: $white-color;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 2rem auto;
+
+    @media(max-width: 620px) {
+        padding: 2rem;
+
+        .movie-card img {
+            width: 100%;
+        }
+    }
+
+    svg {
+        color: $primary-color;
+        font-size: 1.5rem;
+    }
+
+    .movie-card {
+        text-align: center;
+
+        img,
+        h2,
+        p {
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+    }
+}
+
+.tagline {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.info {
+    margin-bottom: 1.5rem;
+
+    h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.description {
+    padding-bottom: 7rem;
+
+    p {
+        line-height: 1.4rem;
+        font-size: 1.2rem;
+    }
+}
