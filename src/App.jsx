@@ -1,5 +1,5 @@
 import NavBar from './components/NavBar'
-import './index.css'
+import './index.scss'
 import { Outlet } from 'react-router-dom'
 
 function App() {

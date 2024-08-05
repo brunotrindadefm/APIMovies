@@ -1,4 +1,4 @@
-import '../pages/MovieGrid.css'
+import '../pages/MovieGrid.scss'
 import { TbError404 } from "react-icons/tb";
 
 const Erro = ({ erro, query }) => {

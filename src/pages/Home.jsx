@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 
-import './MovieGrid.css'
+import './MovieGrid.scss'
 
 import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
@@ -44,10 +44,11 @@ const Home = () => {
                 <h2 className='title'>Filmes populares</h2>
             }
             <div className='movies-container'>
-                {topMovies.length === 0 && <Loading />}
+                {topMovies.length === 0 && <div className="erro-loading">
+                    <Loading />
+                </div>}
                 {topMovies.length > 0 && topMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
             </div>
-
         </div>
     )
 }

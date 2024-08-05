@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 
 import { BsGraphUp, BsWallet2, BsHourglassSplit, BsFillFileEarmarkTextFill } from 'react-icons/bs'
 
-import './Movie.css'
+import './Movie.scss'
 
 import MovieCard from "../components/MovieCard"
 
